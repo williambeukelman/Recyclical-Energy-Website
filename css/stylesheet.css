@@ -1,0 +1,173 @@
+body {
+  background-color: rgb(46, 46, 46);
+  overflow-x: hidden;
+}
+
+p {
+  line-height: 36px;
+}
+
+header .navbar {
+  transition: all 1s linear;
+  display: none;
+}
+
+main > article {
+  min-height: 100vh;
+}
+
+header .navbar.bg-opaque {
+  display: flex;
+  background-color: black;
+}
+
+.anim-slide {
+  transition: transform 0.3s linear;
+}
+
+.anim-slide:hover {
+  transform: translateX(-0.5rem);
+}
+
+.bg-img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-img.background-powerline {
+  background-image: url("../images/power_grid.jpg");
+  transition: all 3s ease-in-out;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+.bg-img.background-sky {
+  background-image: url("../images/sky.jpg");
+  transition: all 3s linear;
+  background-color: rgba(0, 0, 0, 0.521);
+  background-blend-mode: color-dodge;
+  background-attachment: fixed;
+}
+
+#page-impact h1,
+#page-impact p {
+  text-shadow: 3px 3px 10px #000;
+}
+
+.shadow-panel {
+  padding: 2rem;
+  background-color: #00000091;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+#page-cost {
+  background-image: url("../images/factory.jpg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  background-color: darkgray;
+}
+
+.picture-circle {
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  max-width: 300px;
+}
+
+.out-left {
+  transform: translateX(-50rem);
+}
+
+.out-right {
+  transform: translateX(-100rem);
+}
+
+.overlay {
+  position: absolute;
+  min-height: 100vh;
+  left: 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+#page-materials .overlay {
+  display: grid;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  transform: rotateZ(17deg);
+  opacity: 0.8;
+  background-color: aqua;
+  border-radius: 22rem;
+  opacity: 0.8;
+  /*filter: grayscale(.6);*/
+  filter: sepia(1) hue-rotate(131deg);
+}
+
+img.img-sm {
+  max-width: 400px;
+  transition: all 3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#wind-turbine {
+  filter: blur(50px);
+}
+
+#solar-panel {
+  filter: blur(50px);
+  position: absolute;
+  right: -9rem;
+}
+
+.highlight {
+  border-bottom: 5px solid #ffff002e;
+}
+
+.highlight:hover {
+  background-color: #ffff002e;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#gear1,
+#gear2 {
+  z-index: -1;
+  filter: invert();
+  width: 100%;
+  animation: rotate 60s linear 0s infinite forwards;
+}
+
+#gear2 {
+  width: 15%;
+  top: -3rem;
+  position: relative;
+}
+
+#page-reliability .overlay {
+  justify-content: end;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1000px) {
+  #page-materials .overlay {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #page-cost {
+    background-size: 55%;
+  }
+}
